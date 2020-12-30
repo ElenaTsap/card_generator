@@ -1,0 +1,313 @@
+/* TODO: 
+- A6 responsive ratio for the front preview div
+- Responsive font sizes
+- Style orientation radio buttons
+- Style fonts in dropdown menu to preview each font
+- Print only media query for final card output
+- Tidy up mobile
+- Make drier
+*/
+
+/* Eleni:
+changed the width and height of the front card container to responsive and A paper size ration
+Added more diverse fonts and added a font preview on the drop down menu
+*/
+
+/***** GENERAL STYLING START  ****/
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eff5fd;
+    font-family: 'Lato',
+        sans-serif;
+    color: #0f307d;
+    text-align: center;
+    font-size: 0.8em;
+    padding: 0.8%;
+}
+
+#viewport2 {
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#front-form,
+#front-preview {
+    width: 50%;
+}
+
+#img-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.img-choice {
+    width: 20%;
+    border-radius: 8px;
+}
+
+h2,
+#front-message-preview {
+    font-family: 'Raleway',
+    sans-serif;
+}
+
+input,
+label,
+p,
+h2,
+select,
+input[type="button"],
+input[type="color"],
+textarea,
+a,
+button {
+    padding: 1.5%;
+}
+
+input,
+select,
+textarea,
+a,
+button {
+    margin: 1.5%;
+    width: 70%;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Lato',
+        sans-serif;
+    color: #698eb8;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #698eb8;
+}
+
+input[type="text"]:focus,
+select:focus,
+textarea:focus,
+.img-choice:hover {
+    transition: 0.08s;
+    transition-timing-function: ease-in-out;
+    border: #a50606 2px solid;
+    outline: none;
+}front-form
+
+input[type="button"],
+button {
+    width: 15%;
+    background-color: #0f307d;
+    color: white;
+}
+
+a{
+    color: white;
+}
+
+.orientation-label, #landscape, #portrait {
+    display: inline-block;
+}
+
+#landscape, #portrait{
+    width: 1%;
+}
+
+a,
+h2,
+label,
+button {
+    display: block;
+    margin: auto;
+}
+
+a,
+button {
+    margin-top: 2%;
+    text-decoration: none;
+}
+
+#viewport2-btn-2 {
+    display: none;
+}
+
+#font-choice option {
+    font-size: 24px;
+}
+#font-choice option[value="Lato"] {
+    font-family: 'Lato', sans-serif;
+}
+
+#font-choice option[value="Cookie"] {
+    font-family: 'Cookie', cursive;
+}
+
+#font-choice option[value="Monoton"] {
+    font-family: 'Monoton', cursive;
+}
+
+#font-choice option[value="VT323"] {
+    font-family: 'VT323', monospace;
+}
+
+input[type="color"] {
+    height: 5%;
+}
+
+/* FRONT PREVIEW STYLING START */
+
+#front-preview-container {
+    margin: 10% auto auto auto;
+    position: relative;
+
+    /* responsive width and height */
+    height: 40vmin;
+    width: 56.4vmin;
+    background-color: rgb(224, 224, 224);
+    background-size: cover;
+}
+
+#front-message-preview {
+    position: absolute;
+    left: 20px;
+    margin-top: 2%;
+    font-size: 2em;
+    color: black;
+    word-wrap: break-word;
+}
+
+/* FRONT PREVIEW STYLING END */
+
+/* BACK PREVIEW STYLING START */
+
+#back-preview-container {
+    margin: 10% auto auto auto;
+    position: relative;
+
+    /* responsive width and height */
+    height: 40vmin;
+    width: 56.4vmin;
+    background-color: rgb(255, 255, 255);
+    
+    background-image: url(./assets/Card_Back.png);
+    background-size: cover;
+    border: 2vmin solid white;
+    border-image: url(./assets/Border_4.png) 2;
+}
+
+#back-message-preview {
+    position: absolute;
+    left: 20px;
+    margin-top: 6%;
+    font-size: 1.4vmin;
+    color: black;
+    width: 40%;
+    height: 85%;
+    text-align: left;
+    word-wrap: break-word;
+    overflow-y: hidden;
+}
+
+#name-preview {
+    position: absolute;
+    left: 56%;
+    top: 40%;
+
+    width: 40%;
+    height: 8%;
+    font-size: 1.8vmin;
+    text-align: left;
+    overflow: hidden;
+}
+
+#address-preview {
+    position: absolute;
+    left: 56%;
+    top: 48%;
+    width: 35%;
+    line-height: 3.6vmin;
+    font-size: 1.8vmin;
+    text-align: left;
+    word-wrap: break-word;
+}
+
+/* BACK PREVIEW STYLING END */
+
+/* flip card CSS start */
+#flip-card {
+    background-color: transparent;
+    height: 40vmin;
+    width: 56.4vmin;
+    perspective: 1000px;
+}
+
+#flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+#flip-card:hover #flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+#back-preview-container, #front-preview-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+#front-preview-container {
+    margin: auto;
+    background-color: #bbb;
+    color: black;
+}
+
+#back-preview-container {
+    margin: auto;
+    background-color: #2980b9;
+    color: white;
+    transform: rotateY(180deg);
+}
+/* flip card CSS end */
+
+/***** GENERAL STYLING END ****/
+
+/***** MOBILE AND TABLET STYLING START ****/
+
+@media only screen and (max-width: 767px) {
+
+    #viewport2 {
+        display: block;
+    }
+
+    #front-form,
+    #front-preview {
+        width: 100%;
+    }
+
+    #your-preview, #viewport2-btn {
+        display: none;
+    }
+
+    #viewport2-btn-2 {
+        display: block;
+        width: 70%;
+        margin-top: 5%;
+    }
+
+}
+
+/***** MOBILE AND TABLET STYLING END ****/

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Raleway:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cookie&family=Monoton&family=VT323&display=swap" rel="stylesheet">
+    <script async src="./back.js"></script>
+</head>
+
+<body>
+    <section id="viewport3">
+        <!-- FORM -->
+        <div id="back-form">
+            <h2>Step 2: Style the back</h2>
+
+            <label for="back-message">Write back message:</label>
+            <textarea name="back-message" id="back-message" placeholder="Your message..."></textarea>
+
+            <label for="from-name">Name of receiver:</label>
+            <input type="text" name="name" id="name-input" placeholder="Name of receiver..."></input>
+
+            <label for="to-name">Address of receiver:</label>
+            <input type="text" name="address" id="address-input" placeholder="Address of receiver..."></input>
+
+            <p>Add a border:</p>
+            <div id="border-container">
+                <img class="img-choice" src="./assets/Border_1.png" alt="Classic">
+                <img class="img-choice" src="./assets/Border_2.png" alt="Confetti">
+                <img class="img-choice" src="./assets/Border_3.png" alt="Dark">
+                <img class="img-choice" src="./assets/Border_4.png" alt="None">
+            </div>
+
+            <button onclick="saveCardBack()">
+                <a href="./index.html">Back</a>
+            </button>
+            <button onclick="saveCardBack()">
+                <a href="./card.html">Next</a>
+            </button>
+        </div>
+
+        <!-- PREVIEW -->
+        <div id="back-preview">
+            <h2 class="your-preview">Your preview will be here:</h2>
+            <div id="back-preview-container">
+                <p id="back-message-preview"></p>
+                <p id="name-preview"></p>
+                <p id="address-preview"></p>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

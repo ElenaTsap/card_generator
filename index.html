@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Raleway:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cookie&family=Monoton&family=VT323&display=swap" rel="stylesheet">
+    <script async src="./main.js"></script>
+</head>
+
+<body>
+    <section id="viewport2">
+        <!-- FORM -->
+        <div id="front-form">
+            <h2>Step 1: Style the front</h2>
+            <p>Choose orientation:</p>
+            <form name ="formOrient" onchange="changeOrientation()">
+                <input type="radio" name="orientation" id="landscape" value='landscape' checked>
+                <label class="orientation-label" for="landscape">Landscape</label>
+                <input type="radio" name="orientation" id="portrait" value='portrait'>
+                <label class="orientation-label" for="portrait">Portrait</label>
+            </form>
+
+            <p>Choose an image:</p>
+            <div id="img-container">
+                <img class="img-choice" src="./assets/img1.jpeg" alt="Durmitor">
+                <img class="img-choice" src="./assets/img2.jpg" alt="Kotor">
+                <img class="img-choice" src="./assets/img3.jpg" alt="Busan">
+            </div>
+
+            <label for="custom-url">Or import your own link:</label>
+            <input type="text" name="custom-url" id="custom-url" placeholder="Type URL Here...">
+            <input type="button" onclick="addCustomURL()" value="Update">
+
+            <label for="front-message">Write front message:</label>
+            <textarea name="front-message" id="front-message" placeholder="Your message..."></textarea>
+
+            <p>Select font:</p>
+            <select name="font-choice" id="font-choice" onchange="changeFont()">
+                <option value="Lato">Lato</option>
+                <option value="Cookie">Cookie</option>
+                <option value="Monoton">Monoton</option>
+                <option value="VT323">VT323</option>
+            </select>
+
+            <label for="head">Select text color:</label>
+            <input type="color" id="color-choice" name="color-choice"
+            value="#000000" onchange="changeColor()">
+
+            <button onclick="saveCardFront()">
+                <a href="back.html">Next</a>
+            </button>
+        </div>
+
+        <!-- PREVIEW -->
+        <div id="front-preview">
+            <h2 class="your-preview">Your preview will be here:</h2>
+            <div id="front-preview-container">
+                <p id="front-message-preview"></p>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
