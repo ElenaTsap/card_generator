@@ -21,7 +21,7 @@ backClass.classList.add('flip-card-back'); */
 
 
 function newWindow() {
-    var opened = window.open("");
+    var opened = window.open("./whatever.html");
     opened.document.write(`<!DOCTYPE html>
     <html lang="en">
     
